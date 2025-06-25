@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        // two styles of declaring function- 1) function declaration hoisting 2) function expression
+        a();  
+        function a(){  //function declaration hoisting
+            console.log('function a executed');
+        }
+        //so first the declared function is hoisted and then the code is executed
+        // b() //this will give error (undefined)
+        //function expression (the declared function is not hoisted in this case)
+        b= function(){   //here the function name is anonymous and not 'b'
+            console.log('function b executed');
+        }
+        b(); //'b' only knows the location of the function, this is called as function expression
+
+        //use function expressions
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
