@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function f1(){
+            var x= 100;
+            with(document.location){ //lexical scope of its own, 'with' statement should be avoided
+                var x= 500; //no hoisting
+            }
+            console.log(x); //500,  scope sequence-> [with, f1(), window] , so 'with' is the activation object
+        }
+        f1();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
