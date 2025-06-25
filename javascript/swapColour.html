@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var color = "black";  // scope-> [window]
+        // console.log("Color is now "+ color);
+        function changeColor() {  // scope -> [changeColour(), window]
+            var anotherColor = "white";
+
+            function swapColours() {    //swapColours() has the most prviledges as it can search all the other functions that it is inside as well as the windows scope , scope-> [swapColours(),changeColour(), window]
+                var tempColor = anotherColor;  //how the value is searched for 'anotherColor' variable - Scope chain augementation(SCA) ,order of scope checked->[swapColor(),changeColor()]
+                anotherColor = color;           // the very first scope in scope chain is called the activation object, here it is swapColors()
+                color = tempColor;
+            }
+            swapColours();
+        }
+        changeColor();
+        console.log("Color is now "+ color);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
