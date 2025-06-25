@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var name = "the Window";
+
+        //closure - a function that "remembers" the variables from the scope where it was created, even after that scope has finished executing.
+//It allows inner functions to access variables from their outer (enclosing) function.
+        var object =
+        {
+            name : "my Object",
+            getNameFunc : function()
+            {
+                //If you used this.name inside the returned function, this would refer to the global object (or undefined in strict mode) when the function is called as a plain function, not to object.
+//By using a closure (var x = this;), you "lock in" the correct reference to object.
+                var x= this;
+                return function(){
+                    return x.name; //SCA[window]  [(), getNameFunc(),object]
+                };
+            }
+        };
+        console.log(object.getNameFunc()());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
