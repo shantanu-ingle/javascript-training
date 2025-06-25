@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        //IE version 6 - refernce counting (currently not used)
+        //chrome uses mark ans sweep
+        obj1 = new Object();
+        obj2 = obj1;
+        console.log(typeof obj1); //object
+        delete obj1; //mark(sweeped later during garbage collection)(to free up the memory)
+        console.log(typeof obj1); //undefined
+        console.log(typeof obj2); //object
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
