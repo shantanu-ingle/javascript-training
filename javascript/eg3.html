@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        /* //Topic 1
+        // var x= 100;
+        var x = "Hello" //number, boolean, strings are primitive types
+        console.log(typeof(x))
+        //can primitive types extended?
+        //No, they dont have a scope
+        x.a= 500;
+        console.log(x);
+        console.log(x.a);
+
+        obj = new Object();
+        obj.c= 'some value from c'
+        console.log(obj.c)
+        console.log(typeof(obj.c))  //string
+        console.log(typeof(obj)) //object
+        //refernce types can be extended */
+
+
+        //Topic 2
+        //refer by Value vs ref by Reference
+        var x=100;
+        y=x;  //refer by value as x is a primitve type
+        console.log(x); //100
+        console.log(y); //100
+
+        y=1000
+        console.log(y);//1000
+        console.log(x); //100
+        obj1 = new Object();
+        obj1.a = 200;
+        obj2 = obj1;  //refer by Reference (heap storage) - both objects have a shared location 
+        console.log(obj1.a); //200
+        console.log(obj2.a); //200
+        obj2.b = 750;
+        console.log(obj2.b); //750
+        console.log(obj1.b); //750
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
