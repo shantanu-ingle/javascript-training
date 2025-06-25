@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function Person(){ //constructor as js does not have constructor of its own
+            // var x= 100;  // the varoables here are declared locally so it wont work outside the function
+            // var y= 200;
+
+            this.x = 100;  // now we using 'this' to make it privilidged (available only to the instances of this particular function)
+            this.y = 200;
+            var z= 300; //private
+            //var - private, this- priviledged
+
+        }
+        var inst1 = new Person();
+        /* inst1{  this is the accessed values in the inst1
+            this.x=100;
+            this.y=200;
+        } */
+        console.log(inst1.x); //100
+        console.log(inst1.y); //200
+        console.log(inst1.z); //undefined
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
