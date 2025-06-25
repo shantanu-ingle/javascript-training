@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type ="text/javascript">
+        if(true){ //non lexical scope - conditional and loops are non lexical scopes
+        
+            var x=10; //hoisting - consider it as moving the declaration to the top (should not be done)
+        }
+        console.log(x);
+
+        function abc(){ //lexical scope (functions and objects are lexical scope and everything else is non lexical)
+            var y =0;
+        }
+        abc()
+        console.log(y);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
