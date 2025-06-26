@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrototypePattern</title>
+    <script type="text/javascript">
+        //prototype is a shared scope available to all instances as a 'dynamic reference'
+
+        //constructor is refereed as a 'static clone'
+        function Person(){ //prototype{}
+
+        }
+        //Prototype pattern- used to create objects using a prototype
+        // It allows you to create new objects based on an existing object,
+        // without having to define a new constructor function for each new object.
+        // This is useful when you want to create multiple objects with similar properties and methods,
+        // but you don't want to duplicate the code for each object.
+        // It is a way to create objects that share the same properties and methods,
+        // without having to define a new constructor function for each new object.
+
+        //1
+
+        /* Person.prototype.name = "Nicolos";
+        Person.prototype.age =29;
+        Person.prototype.job = "Software Engineer";
+        Person.prototype.sayName = function(){
+            console.log(this.name);
+        };
+        
+        var person1 = new Person(); //create a new object using the prototype
+        var person2 = new Person(); //create another object using the prototype
+        person1.name = "Greg"; 
+
+        console.log(person1.name); //Greg
+        console.log(person2.name); //Nicolos
+       
+        delete person1.name; //delete the name property from person1
+        console.log(person1.name); //Nicolos */
+
+//2
+      /*   function myDate(){  //prototype{}
+            this.getMinutes = function(){
+                console.log('report the minute')
+            }
+
+            this.getHours=  function(){
+                console.log('report the hour')
+            }
+            this.getSeconds = function(){
+                console.log('report the seconds')
+            }
+        }
+
+        var d = new myDate();
+        console.log(d.getMinutes()); //function
+        
+        // d{
+        //     'd' will constain all the properties and methods of myDate
+        // } */
+        
+
+        //3
+/* function myDate(){
+
+}
+myDate.prototype.getMinutes = function(){
+    console.log('report the minute')
+}
+myDate.prototype.getHours=  function(){
+    console.log('report the hour')
+}
+myDate.prototype.getSeconds = function(){
+    console.log('report the seconds')
+};
+
+var d = new myDate();
+var e = new myDate();
+
+console.log(typeof Date.prototype.getHours);
+console.log(typeof Date.prototype.getSeconds); //function
+console.log(typeof Date.prototype.getMinutes); //function
+
+console.log(typeof String.prototype.toUpperCase); //function */
+
+//4 creating out own prototype function
+/* console.log(typeof Array.prototype.sort); //function
+
+String.prototype.startsWith = function(text){
+    return this.indexOf(text) == 0; //check if the string starts with the given text
+}
+var msg = "hello World!";
+console.log(msg.startsWith("hello")); //true
+
+ */
+
+ //5
+ function Person(){
+    //prototype{name, age, job, sayName()}
+ }
+//   var friend = new Person();  // wont work as the prototype is not defined yet
+
+    Person.prototype = {
+    constructor: Person, //set the constructor property to Person
+    //this is optional, but it is a good practice to set the constructor property
+    name: "Nicolos",
+    age: 29,
+    occupation: "Software Engineer",
+    sayName: function() {
+        alert(this.name);
+    }
+ };
+
+//  Person.prototype.name = "Nicolos";
+//         Person.prototype.age =29;
+//         Person.prototype.occupation = "Software Engineer";
+//         Person.prototype.sayName = function(){
+//             console.log(this.name);
+//         };
+ var friend = new Person(); //create a new object using the prototype
+
+//  console.log(friend.constructor == Person)
+// console.log(friend.name);
+// console.log(friend.age);
+// console.log(friend.occupation);
+// console.log(friend.sayName()); //Nicolos
+// console.log(friend.constructor == Person); //true
+
+// Person.prototype.sayHi = function(){
+//     console.log("Hii");
+// };
+// friend.sayHi();
+friend.sayName(); //[friend, Person.prototype]
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
