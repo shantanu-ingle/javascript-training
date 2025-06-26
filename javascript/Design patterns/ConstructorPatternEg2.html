@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConstructorPattern</title>
+    <script type="text/javascript">
+         function createPerson(name, age, job){
+           //Constructor pattern- unkie factory pattern no new object is created 
+           // and the information is directly stored in the scope of the object
+            this.name= name;
+            this.age = age;
+            this.job = job;
+            this.sayName = function(){
+                console.log(this.name);
+            };
+            
+        }
+
+        var person1 = new createPerson("Nicolas",29,"Software Engineer"); //'new' keyword needs to be used
+        var person2 = new createPerson("Greg", 27, "Doctor");
+
+        person1.sayName(); //Nicolas
+        person2.sayName(); //Greg
+
+        console.log(person1.sayName === person2.sayName); //false
+        console.log(person1 instanceof Object); //true
+        console.log(person1 instanceof createPerson); //true
+
+        console.log(person1.constructor == createPerson); //true
+        console.log(person2.constructor == createPerson); //true
+
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
