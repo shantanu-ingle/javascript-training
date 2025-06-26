@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactoryPattern</title>
+    <script type = "text/javascript">
+//Disadvantage of factory pattern: Adds extra complexity and classes
+// Makes object creation less transparent
+// Can lead to overengineering if overused
+// Increases maintenance if product classes change
+
+        function createPerson(name, age, job){
+            var o = new Object();  //factory pattern has a object in the function
+            //objective- to store data in the objects and retrive it
+            o.name= name;
+            o.age = age;
+            o.job = job;
+            o.sayName = function(){
+                console.log(this.name);
+            };
+            return o;
+        }
+
+        var person1 = createPerson("Nicolas",29,"Software Engineer");
+        var person2 = createPerson("Greg", 27, "Doctor");
+
+        person1.sayName(); //Nicolas
+        person2.sayName(); //Greg
+        console.log(person1)
+        console.log(person1.sayName === person2.sayName); //false
+        console.log(person1 === person2); //false
+        //problem- duplication of methods with common functionality
+        // To avoid this we will move to constructor pattern
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
