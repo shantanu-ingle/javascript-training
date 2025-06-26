@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrototypePattern</title>
+    <script type="text/javascript">
+
+function hasPrototypeProperty(object, name){
+    return !Object.getPrototypeOf(object).hasOwnProperty(name) && (name in object);
+}
+
+        function Person() { //prototype{}
+        }
+
+        Person.prototype.name = "Nicolos";
+        Person.prototype.age = 29;
+        Person.prototype.job = "Software Engineer";
+        Person.prototype.sayName = function () {
+            console.log(this.name);
+        };
+
+        var person1 = new Person(); //create a new object using the prototype
+
+        console.log(hasPrototypeProperty(person1, "name")); // false
+  /*       var person2 = new Person(); //create another object using the prototype
+   
+        console.log(person1.hasOwnProperty("name")); // false
+        console.log("name" in person1); // true
+
+        person1.name = "Greg";
+        console.log(person1.name);
+        console.log(person1.hasOwnProperty("name")); // true
+        console.log("name" in person1); // true
+
+        console.log(person2.name); // Nicolos
+        console.log(person2.hasOwnProperty("name")); // false
+        console.log("name" in person2); // true
+        */
+    </script> 
+</head>
+<body>
+    
+</body>
+</html>
