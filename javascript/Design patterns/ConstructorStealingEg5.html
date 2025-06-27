@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+    function SuperType(){
+    this.colors= ["red","blue","green"];
+}
+function SubType(){
+//    SuperType.call(this)// method 1 (recommended)
+
+var inst1 = new SuperType(); //method2
+return inst1; // method 2
+}
+
+
+var instance1 = new SubType();
+instance1.colors.push("black");
+console.log(instance1.colors); //"red, blue, green,black"
+
+var instance2 = new SubType();
+console.log(instance2.colors);// 'red, blue, green
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
