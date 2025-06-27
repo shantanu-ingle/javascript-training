@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrototypeChaining</title>
+    <script type="text/javascript">
+        // function SuperType() {
+        //     this.property = true;
+        // }
+
+        // SuperType.prototype.getSuperValue = function() {
+        //     return this.property;
+        // };
+        // function SubType() {
+        //     this.subProperty = false;
+        // }
+
+        // SubType.prototype = new SuperType(); //inherit from SuperType
+        // SubType.prototype.getSubValue = function() {
+        //     return this.subProperty;
+        // };
+
+        //1
+        // var instance = new SubType();
+
+        // console.log(instance.getSuperValue());
+
+        // console.log(instance instanceof Object);
+        // console.log(instance instanceof SubType);
+
+        // console.log(Object.prototype.isPrototypeOf(instance)); //true
+        // console.log(SubType.prototype.isPrototypeOf(instance)); //true
+        // console.log(SuperType.prototype.isPrototypeOf(instance)); //true
+
+//2
+
+/* SubType.prototype = new SuperType(); //prototype chaining
+        SubType.prototype ={ //this line breaks the prototype chaining 
+            getSubValue : function(){
+                return this.subProperty;
+            },
+            someOtherMethod : function(){
+                return false;
+            }
+        }
+// var inst1 = new SubType(); //[inst1,SubType.prototype, SuperType.prototype];
+SubType.prototype = new SuperType();
+var instance = new SubType();
+console.log(instance.getSuperValue()); //SCA [instance, SubType.prototype] */
+
+
+
+ //3
+// SubType.prototype = new SuperType();
+
+// SubType.prototype.getSubValue = function() {
+//     return this.subProperty;
+// };
+
+// SubType.prototype.getSuperValue = function() {
+//     return false;
+// };
+// var inst1 = new SubType(); //[inst1,SubType.prototype, SuperType.prototype];
+
+// console.log(inst1.x); // x is not defined, so this would be undefined
+// console.log(inst1.getSuperValue()); // false
+
+
+
+
+//4
+function SuperType(){
+    this.colors= ["red","blue","green"];
+}
+function SubType(){
+   
+}
+Subtype.prototype = new SuperType(); //prototype chaining
+
+var instance1 = new SubType();
+instance1.colors.push("black");
+console.log(instance1.colors); //"red, blue, green,black"
+
+var instance2 = new SubType();
+console.log(instance.colors);// 'red, blue, green, black
+
+    </script>
+      
+</head>
+<body>
+    
+</body>
+</html>
