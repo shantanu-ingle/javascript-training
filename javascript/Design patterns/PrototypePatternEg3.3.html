@@ -7,7 +7,7 @@
     <script type="text/javascript">
 
 function hasPrototypeProperty(object, name){
-    return !Object.getPrototypeOf(object).hasOwnProperty(name) && (name in object);
+    return !object.prototype.hasOwnProperty(name) && (name in object);
 }
 
         function Person() { //prototype{}
@@ -30,7 +30,7 @@ function hasPrototypeProperty(object, name){
 
         person1.name = "Greg";
         console.log(person1.name);
-        console.log(person1.hasOwnProperty("name")); // true
+        console.log(person1.hasOwnproperty("name")); // true
         console.log("name" in person1); // true
 
         console.log(person2.name); // Nicolos
