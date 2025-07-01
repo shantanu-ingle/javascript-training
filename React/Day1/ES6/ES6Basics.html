@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // if(true){
+        //     var x= 100;
+        // }
+        // console.log(x); // 100, var is function scoped or globally scoped 
+        // const pi = 3.14;
+        // pi = 3.14159; // TypeError: Assignment to constant variable.
+        // const player = {name:"Rohit", age: 30, sport :"tennis"};
+        // player.name = "Virat"; // Allowed, properties of const objects can be changed
+        // console.log(player)
+
+
+        //Spread operator - Object & Array
+        // var cars = ["BMW", "Audi", "Mercedes"];
+        // var moreCars = ["Toyota", "Honda"];
+        // var allCars = [...cars, ...moreCars];
+        // console.log(allCars); // ["BMW", "Audi", "Mercedes", "Toyota", "Honda"]
+        // var person = {...player, sport: "Cricket"};
+        // console.log(person); // {name: "Rohit", age: 30, sport: "Cricket"}
+
+
+        //Destructuring - Arrays and objects
+        //Arrays
+        // var cars = ["BMW", "Audi", "Mercedes"];
+        // var firstcar, secondcar;
+        // firstcar = cars[0];
+        // secondcar  = cars[1]
+        //OR
+        // var[firstcar,, secondcar,thirdcar="unknown"] = cars;
+        // console.log(firstcar); // BMW
+        // console.log(secondcar); // Audi
+        // console.log(thirdcar);
+
+        // function PrintPlayer(p){
+        //     p.name = "Rohit";
+        //     console.log(p.name + " playes "+ p.sport);
+        // }
+        // //OR
+        // var{name, sport} = player;//destructuring
+        // function PrintPlayer({name, sport}){
+        //     // name = "Rohit";
+        //     console.log(name + " playes "+ sport);
+        // }
+        // PrintPlayer(player); // Rohit playes tennis
+        // console.log(player)
+        
+
+
+        // var player = {
+        //     name:"Charles",
+        //     age : 22,
+        //     details:{
+        //         country: "USA",
+        //         sport: "Basketball",
+        //         worldRanking: {
+        //             no:2
+        //         }
+        //     }
+        // }
+        // var  {details:{worldRanking:{no}}}= player;
+        // console.log(no); // 2, destructuring nested objects
+
+
+
+        console.log("Started...");
+        setTimeout(function(){
+            console.log("printed after 2 sec");
+        },2000);
+        console.log("ended..")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
