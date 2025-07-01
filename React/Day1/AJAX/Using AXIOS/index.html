@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src ="getData.js"></script>
+    <script>
+        console.log('Started..');
+        var aPromise = getData();
+        aPromise.then(function(response){
+            console.log('promise rsolved')
+            console.log(response.data);
+        
+        }, function(error){
+            console.error("Error occurred:", error);
+        });
+        console.log('After getData() call');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
