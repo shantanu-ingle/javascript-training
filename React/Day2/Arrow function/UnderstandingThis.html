@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Emp(){
+            this.salary= 200000;
+            // setTimeout(function(){
+            //     console.log(this.salary); // undefined - because 'this' refers to the global object (or undefined in strict mode)
+            // }, 2000);
+            setTimeout(()=> {
+                console.log(this.salary); // 200000 - because 'this' refers to the instance of Emp
+            });
+            
+        }
+        var e = new Emp();
+        console.log(e.salary); // 200000
+
+        class Posts {
+            posts=[]
+            getPosts(){
+                fetch("https://jsonplaceholder.typicode.com/posts")
+                    .then(function(res){
+                        return res.json();
+                    })
+            //         .then(function(resPosts){
+            //             this.posts = resPosts;
+            //             console.log(this.posts); // undefined - because 'this' refers to the global object (or undefined in strict mode)
+            //         })
+            // }
+                    .then(resPosts => {
+                        this.posts = resPosts;
+                        console.log(this.posts); // posts array
+                    })
+                    //or simplified with arrow function
+            
+                    .then(res => res.json())
+                    .then(resPosts => (
+                        this.posts = resPosts 
+                    ));
+            }}
+
+            
+            
+        
+        var p = new Posts()
+        p.getPosts();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
