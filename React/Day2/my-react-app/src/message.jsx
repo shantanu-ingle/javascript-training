@@ -1,6 +1,6 @@
 //create a mesage component that displays Hello in h1 tag
 
-import './App.css'
+import './components/app/App.css'
 import React from "react"
 
 class Message extends React.Component{

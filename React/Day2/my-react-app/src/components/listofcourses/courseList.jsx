@@ -1,6 +1,6 @@
-import './App.css'
+import '../app/App.css'
 import React from "react"
-import Course from './course';
+import Course from '../course/course';
 class CourseList extends React.Component{
   render(){
    var courses= [
@@ -10,7 +10,7 @@ class CourseList extends React.Component{
 
    ]
     return (
-      <div><h1>List of courses</h1>
+      <div className='row' ><h1>List of courses</h1>
         {courses.map(c=>(
         <Course course={c}/>
       ))}
