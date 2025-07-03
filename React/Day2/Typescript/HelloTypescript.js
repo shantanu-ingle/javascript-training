@@ -87,5 +87,28 @@ var player = { name: "ABCD", sport: "Tennis" };
 var Emp = /** @class */ (function () {
     function Emp() {
     }
+    Emp.prototype.getSalary = function () {
+        return this.salary;
+    };
     return Emp;
 }());
+//Generic
+var cars = ["BMW", "merc", "aston martin"];
+var cars = new Array();
+var emps = new Array();
+// emps[0]= 100
+function Swap(x, y) {
+    var temp;
+    temp = x;
+    x = y;
+    y = temp;
+}
+Swap(20, 30);
+Swap("Hello", "TS");
+var Point = /** @class */ (function () {
+    function Point() {
+    }
+    return Point;
+}());
+var pointToBeNoted = new Point();
+pointToBeNoted.y;
